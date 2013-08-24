@@ -1,4 +1,4 @@
 battle-hub
 ==========
 
-A space to put web adventures and thoughts.
+A space to put my web adventures and thoughts.
