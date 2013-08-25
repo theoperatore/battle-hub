@@ -1,7 +1,6 @@
 html {
 	font-family: sans-serif;
 	background-color: #ebebeb;
-	line-height: 1.5em;
 }
 
 .container {
@@ -24,6 +23,7 @@ html {
 
 #logo h1 {
 	font-size: 5em;
+	margin-bottom: 0;
 }
 
 #logo img {
