@@ -1,3 +1,12 @@
+window.requestAnimFrame = (function() {
+	return  window.requestAnimationFrame       ||
+			window.webkitREquestAnimationFrame ||
+			window.mozRequestAnimationFrame    ||
+			function( callback ) {
+				window.setTimeout(callback, 1000 / 60);
+			};
+})();
+
 window.addEventListener('load', function(ev) {
 	var canvas       = document.getElementById('c_logo'),
 		ctx          = canvas.getContext('2d'),
@@ -7,9 +16,9 @@ window.addEventListener('load', function(ev) {
 		startAngle = (3*Math.PI/2),
 		anticlockwise = false,
 		radiusMillis = 10,
-		radius = 120,
+		radius = 130,
 		radiusMin = 90,
-		radiusHr = 60,
+		radiusHr = 50,
 		millis,
 		seconds,
 		degsMin,
@@ -22,11 +31,18 @@ window.addEventListener('load', function(ev) {
 		endAngle,
 		endAngleMin,
 		endAngleHr,
-		interval = setInterval(polar,1);
+		timeNow,
+		anim;
 
-	function polar() {
+	canvas.addEventListener('click', function(ev) {
+		cancelAnimationFrame(anim);
+		asteroids();
+	}, false);
+
+	function polar(time) {
+
 		//variables used by all arcs
-		var timeNow = new Date();
+		timeNow = new Date();
 		
 		ctx.clearRect(0,0,1000,400);
 		//ctx.lineCap = "round";
@@ -60,12 +76,12 @@ window.addEventListener('load', function(ev) {
 		endAngleMin = radsMin - Math.PI/2;
 
 		ctx.beginPath();
-		ctx.strokeStyle = '#FF3333';
+		ctx.strokeStyle = '#DD4E22';
 		ctx.arc(x,y,radiusMin,startAngle,endAngleMin,anticlockwise);
 		ctx.stroke();
 
 		//hours arc
-		degsHr = 10.5 * ((timeNow.getHours()) + (timeNow.getMinutes() / 60) + (timeNow.getSeconds() / 60 / 60) + (timeNow.getMilliseconds() / 1000 / 60 / 60));
+		degsHr = 15 * ((timeNow.getHours()) + (timeNow.getMinutes() / 60) + (timeNow.getSeconds() / 60 / 60) + (timeNow.getMilliseconds() / 1000 / 60 / 60));
 		radsHr = Math.PI*(degsHr/180);
 		endAngleHr = radsHr - Math.PI/2;
 		
@@ -73,5 +89,10 @@ window.addEventListener('load', function(ev) {
 		ctx.strokeStyle = '#FFFF5D';
 		ctx.arc(x,y,radiusHr,startAngle,endAngleHr,anticlockwise);
 		ctx.stroke();
+
+		anim = requestAnimFrame(polar);
 	}
+	
+	anim = requestAnimFrame(polar);
+
 }, false);
