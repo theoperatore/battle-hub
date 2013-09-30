@@ -16,7 +16,7 @@ html {
 
 #logo {
 	/*height:325px;*/
-	height:75%;
+	/*height:75%;*/
 	margin:0 auto;
 	text-align: center;
 }
@@ -28,6 +28,10 @@ html {
 
 #logo img {
 	opacity: 0.50;
+}
+
+#content canvas {
+	text-align: center;
 }
 
 .section {

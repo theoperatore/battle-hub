@@ -24,7 +24,7 @@ function asteroids() {
 	}
 
 	function draw() {
-
+		
 	}
 
 	asteroidAnim = requestAnimFrame(update);

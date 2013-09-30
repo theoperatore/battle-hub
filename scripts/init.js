@@ -32,14 +32,45 @@ window.addEventListener('load', function(ev) {
 		endAngleMin,
 		endAngleHr,
 		timeNow,
-		anim;
+		anim,
+		mode = 1,
+		count = 0,
+		start = false;
+		step    = 3,
+		stepMin = 1.50,
+		stepHr  = 1;
 
 	canvas.addEventListener('click', function(ev) {
-		cancelAnimationFrame(anim);
-		asteroids();
+		//cancelAnimationFrame(anim);
+		//asteroids();
+
+		start = true;
+		mode = (mode) ? 0 : 1;
+
 	}, false);
 
 	function polar(time) {
+
+		//if clicked, then grow the radii with the animations
+		if (mode === 0 && start) {
+			radius    += step;
+			radiusMin += stepMin;
+			radiusHr  += stepHr;
+			count++;
+		}
+		//shrink radii with animations
+		else if (mode === 1 && start) {
+			radius    -= step;
+			radiusMin -= stepMin;
+			radiusHr  -= stepHr;
+			count ++;
+		}
+
+		//but only grow/shrink specific amount
+		if (count >= 25) {
+			count = 0;
+			start = false;
+		}
 
 		//variables used by all arcs
 		timeNow = new Date();
