@@ -24,6 +24,7 @@ html {
 #logo h1 {
 	font-size: 5em;
 	margin-bottom: 0;
+	margin-top:0.25em;
 }
 
 #logo img {
@@ -32,37 +33,6 @@ html {
 
 #content canvas {
 	text-align: center;
-}
-
-.section {
-	float: left;
-	width: 30.33333333%;
-	/*border: 1% solid #ebebeb;*/
-	background-color: #85b1ff;
-	text-align: center;
-	padding:1%;
-	border-radius: 2px;
-
-	transition:all 250ms;
-	-0-transition:all 250ms;
-	-ms-transition:all 250ms;
-	-moz-transition:all 250ms;
-	-webkit-transition:all 250ms;
-
-	position:relative;
-}
-
-.mid {
-	margin:0 1.5%;
-}
-
-.section:hover {
-	box-shadow: 1px 5px 10px 0px #333333;
-}
-
-.expanded {
-	height:100%;
-	margin-top: -48%;
 }
 
 .clear {
