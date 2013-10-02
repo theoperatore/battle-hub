@@ -3,10 +3,19 @@ html {
 	background-color: #ebebeb;
 }
 
+#content {
+	width: 100%;
+	text-align: center;
+}
+
 .container {
 	padding: 0 1em;
-	/*width:980px;*/
 	margin:0 auto;
+	width:1000px;
+}
+
+canvas {
+	display:inline;
 }
 
 #header {
