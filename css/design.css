@@ -1,10 +1,13 @@
 html {
 	font-family: sans-serif;
 	background-color: #ebebeb;
+	width:100%;
 }
 
 #content {
+	width:100%;
 	text-align: center;
+	margin: 0 auto;
 }
 
 #content table {
@@ -13,6 +16,7 @@ html {
 }
 
 .container {
+	width:100%;
 	padding: 0.5em 1em;
 	margin:0 auto;
 	/*width:1000px;*/
