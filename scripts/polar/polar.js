@@ -111,7 +111,7 @@ function polar() {
 	}
 
 	function draw() {
-		ctx.clearRect(0,0,1000,450);
+		ctx.clearRect(0,0,x,y);
 		//ctx.lineCap = "round";
 		ctx.font = "20pt";
 		ctx.lineWidth = 40;
