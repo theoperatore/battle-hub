@@ -20,7 +20,7 @@ html {
 }
 
 canvas {
-	display:inline;
+	display:inline-block;
 }
 
 #demo_asteroids, #demo_spiral {

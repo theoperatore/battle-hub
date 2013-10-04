@@ -14,6 +14,13 @@ window.cancelAnimationFrame = (function() {
 })();
 
 window.addEventListener('load', function(ev) {
+	(function() {
+		var canvas_polar = document.getElementById('demo_polar');
+
+		canvas_polar.width = document.width;
+	})();
+
+
 	var spd = new Spiral(),
 		canvas_spiral = document.getElementById('demo_spiral'),
 		asd = new Asteroids(),
