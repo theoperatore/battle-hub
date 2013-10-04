@@ -41,7 +41,7 @@ var Spiral = function() {
 	}
 
 	function draw() {
-		ctx.clearRect(0,0,1000,450);
+		ctx.clearRect(0,0,950,450);
 		for (var i = 0; i < particles.length; i++) {
 			ctx.beginPath();
 			ctx.fillStyle = (i === 0 || i === 50 || i === 100 || i === 150 || i === 199)? "red" : "blue";

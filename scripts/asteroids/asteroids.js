@@ -78,7 +78,7 @@ var Asteroids = function() {
 	}
 
 	function draw() {
-		ctx.clearRect(0,0,1000,450);
+		ctx.clearRect(0,0,950,450);
 
 		//draw the asteroid
 		ctx.beginPath();
