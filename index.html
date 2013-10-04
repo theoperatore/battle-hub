@@ -1,14 +1,19 @@
-<!DOCTYPE>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html>
 <head>
-	<meta charset='UTF-8'>
-	<meta content='width=device-width,initial-scale=1' name='viewport'>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
 
 	<link rel="stylesheet" type="text/css" href="./css/design.css">
 	<link rel="stylesheet" type="text/css" href="./css/clearfix.css">
 	<script type="text/javascript" src='./scripts/init.js'></script>
+	<script type="text/javascript" src='./scripts/polar/polar.js'></script>
 	<script type="application/javascript" src='./scripts/asteroids/particle.js'></script>
 	<script type="application/javascript" src='./scripts/asteroids/asteroids.js'></script>
+	<script type="application/javascript" src='./scripts/spiral/spirals.js'></script>
 
 	<title>Alex Petersen - Code.Design</title>
 </head>
@@ -19,20 +24,32 @@
 		<!--<h1>Alex Petersen</h1>-->
 		<div id='logo'>
 			<h1>Code.Design</h1>
+			<h4>Mouse over each demo to begin!</h4>
 		</div>
 	</div>
 	<div id="content">
-		<canvas id='c_logo' width='1000' height='450'>Really Awesome Content</canvas>
-		<div id="section">
-			<h3>Code</h3>
-			<p>Delivering clean, reusable code that is easy to read and maintain.</p>
-			<p>Good code strives to be adapted to many different environments and be as robust as ever.</p>
-		</div>
-		<div id="section">
-			<h3>Design</h3>
-			<p>Space is great. Space can highlight important parts of a page or emphasize others.</p>
-			<p>Space can even help define more space...so meta</p>
-		</div>
+		<canvas id='demo_polar' width='1000' height='450'>Really Awesome Content</canvas>
+		<h3>A Polar Clock</h3>
+		<p>The polar clock is telling the time as the colors trace the circle.</p>
+		<table>
+			<tr><td><p><span style="color:#57FF52;">Green</span>  -- denotes Seconds</p></td></tr>
+			<tr><td><p><span style="color:#DD4E22;">Orange</span> -- denotes Minutes</p></td></tr>
+			<tr><td><p><span style="color:#FFFF5D;">Yellow</span> -- denotes Hours (24 Hr Clock)</p></td></tr>
+			<tr><td><p><span style="color:#333333;">Black</span>  -- denotes Milliseconds</p></td></tr>
+		</table>
+
+		<canvas id='demo_asteroids' width='1000' height ='450'>More Really Awesome Content</canvas>
+		<h3>Asteroids!</h3>
+		<p>This demo shows off two forces of Physics: Gravitational and Electrostatic Forces!</p>
+		<p>All of the <span style="color:red;">Red Particles</span> are attracted toward the <span style="color:grey;">Grey Planet</span> due to Newton's Law of Universal Gravitation.</p>
+		<p>To prevent this from happening, the <span style="color:yellow; font-weight:bold;">Yellow Sun</span> emits an Electrostatic force of repulsion.</p>
+		<p>Try moving the Sun around the demo area!</p>
+		
+		<canvas id='demo_spiral' width='1000' height ='450'>More Really Awesome Content</canvas>
+		<!--<iframe width="100%" height="300" src="http://jsfiddle.net/theoperatore/cKVu8/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>-->
+		<h3>Spiral</h3>
+		<p>Don't stare for too long! Otherwise you'll never be able to look away!</p>
+		<p>This cool design utilizes particles of different speeds all traveling in the same circle to make an <span style="color:blue">Optical Illusion</span>!</p>
 	</div>
 	<div id='footer'>
 		<p>Alex Petersen Copyright &copy2013</p>

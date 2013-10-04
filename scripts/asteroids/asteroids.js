@@ -1,5 +1,5 @@
-function asteroids() {
-	var canvas = document.getElementById('c_logo'),
+var Asteroids = function() {
+	var canvas = document.getElementById('demo_asteroids'),
 		ctx = canvas.getContext('2d'),
 		planet = new Particle(500,200,10),
 		asteroid = new Particle(500,200,30),
@@ -8,7 +8,10 @@ function asteroids() {
 		level = 500,
 		particles = [],
 		asteroidAnim,
-		start = null;
+		start = null,
+		as = this;
+
+	this.go = false;
 
 	//initialize particles
 	for (var i = 0; i < level; i++) {
@@ -31,10 +34,7 @@ function asteroids() {
 
 	},false);
 
-
 	function update(time) {
-		var dt;
-		
 		//if this is the first loop, initialize starting time
 		if (start === null) start = time;
 
@@ -44,24 +44,37 @@ function asteroids() {
 		//reset the starting time
 		start = time;
 
-		//update all particles
-		for (var i = 0; i < particles.length; i++) {
-			particles[i].update(dt,asteroid,planet,i);
+		if (as.go) {
+			var dt;
 
-			if (particles[i].x >= canvas.width || particles[i].x <= 0) {
-				particles[i].dx = -(particles[i].ddx * 0.55);
-			}
+			//update all particles
+			for (var i = 0; i < particles.length; i++) {
+				particles[i].update(dt,asteroid,planet,i);
+
+				//for some reason, it is more fun to play with when the velocity is set to the opposite
+				//of the acceleration with restitution...
+				if (particles[i].x >= canvas.width || particles[i].x <= 0) {
+					particles[i].dx = -(particles[i].ddx * 0.55);
+				}
 			
-			if (particles[i].y >= canvas.height || particles[i].y <= 0) {
-				particles[i].dy = -(particles[i].ddy * 0.55);	
+				if (particles[i].y >= canvas.height || particles[i].y <= 0) {
+					particles[i].dy = -(particles[i].ddy * 0.55);	
+				}
+
+				if (particles[i].collides(asteroid)) {
+					particles[i].dx = -(particles[i].ddx * 0.55);
+					particles[i].dy = -(particles[i].ddy * 0.55);
+				}
 			}
+
+			
 		}
 
 		//draw new updates
 		draw();
 
 		//continue the animation
-		requestAnimFrame(update);
+		asteroidAnim = requestAnimFrame(update);	
 	}
 
 	function draw() {
@@ -90,3 +103,7 @@ function asteroids() {
 
 	asteroidAnim = requestAnimFrame(update);
 }
+
+Asteroids.prototype.engage = function(bool) {
+	this.go = bool;
+};

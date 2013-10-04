@@ -130,15 +130,9 @@ Particle.prototype.update = function(time,graviticCenter,repulsionCenter,index) 
 
 /*
 
-Simple Update for low number of particles.
+Simple update used to only update the new positions based on a fixed acceleration
  */
-Particle.prototype.simpleUpdate = function(time,p) {
-	this.electrostaticForce(p);
-	this.gravitationalForce(p);
-
-	//update current accels based on force functions
-	this.ddx = this.gravX + this.elecX;
-	this.ddy = this.gravY + this.elecY;
+Particle.prototype.simpleUpdate = function(time) {
 
 	//update veloctiy
 	this.dx += this.ddx*time;
