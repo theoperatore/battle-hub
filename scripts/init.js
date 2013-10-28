@@ -14,11 +14,11 @@ window.cancelAnimationFrame = (function() {
 })();
 
 window.addEventListener('load', function(ev) {
-	var spd = new Spiral(),
-		canvas_spiral = document.getElementById('demo_spiral'),
+	var //spd = new Spiral(),
+		//canvas_spiral = document.getElementById('demo_spiral'),
 		asd = new Asteroids(),
 		canvas_asteroid = document.getElementById('demo_asteroids');
-
+/*
 	canvas_spiral.addEventListener('mouseenter',function(ev) {
 		spd.engage(true);
 	}, false);
@@ -26,7 +26,7 @@ window.addEventListener('load', function(ev) {
 	canvas_spiral.addEventListener('mouseleave', function(ev) {
 		spd.engage(false);
 	}, false);
-
+*/
 	canvas_asteroid.addEventListener('mouseenter',function(ev) {
 		asd.engage(true);
 	}, false);
