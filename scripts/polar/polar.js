@@ -59,6 +59,9 @@ function polar() {
 			hrWidth  -= stepHr;
 			//millisWidth -= (stepMillis - 2.75);
 			count++;
+			
+			console.log(secWidth, minWidth, hrWidth, 'widths');
+			console.log(radius, radiusMin, radiusHr, 'radii');
 		}
 		//shrink radii with animations
 		else if (mode === 1 && start) {
@@ -105,6 +108,7 @@ function polar() {
 		degsHr = 15 * ((timeNow.getHours()) + (timeNow.getMinutes() / 60) + (timeNow.getSeconds() / 60 / 60) + (timeNow.getMilliseconds() / 1000 / 60 / 60));
 		radsHr = Math.PI*(degsHr/180);
 		endAngleHr = radsHr - Math.PI/2;
+		
 
 		draw();
 		anim = requestAnimFrame(update,canvas);
